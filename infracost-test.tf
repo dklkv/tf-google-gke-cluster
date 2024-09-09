@@ -25,7 +25,7 @@ resource "google_compute_instance" "my_instance" {
 
   guest_accelerator {
     type = "nvidia-tesla-p4" # <<<<<<<<<< Try changing this to nvidia-tesla-p4 to compare the costs
-    count = 4
+    count = 3
   }
 
   labels = {
@@ -37,7 +37,7 @@ resource "google_compute_instance" "my_instance" {
 resource "google_cloudfunctions_function" "my_function" {
   runtime = "nodejs20"
   name = "test"
-  available_memory_mb = 256
+  available_memory_mb = 512
 
   labels = {
     environment = "Prod"
